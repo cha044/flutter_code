@@ -10,11 +10,12 @@ class CreateEmailView extends StatelessWidget {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController imgLinkController = TextEditingController();
+  final EmailBloc emailBloc;
+
+  CreateEmailView({required this.emailBloc});
 
   @override
   Widget build(BuildContext context) {
-    final emailBloc = BlocProvider.of<EmailBloc>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Create Email'),
