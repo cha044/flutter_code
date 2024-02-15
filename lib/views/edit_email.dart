@@ -7,8 +7,11 @@ import '../apis_bloc/api_state_bloc.dart';
 
 class EditEmailView extends StatelessWidget {
   final int emailId;
+  final EmailBloc emailBloc; // Add this field
 
-  EditEmailView({required this.emailId});
+  EditEmailView(
+      {required this.emailId,
+      required this.emailBloc}); // Update the constructor
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
@@ -17,8 +20,6 @@ class EditEmailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final emailBloc = BlocProvider.of<EmailBloc>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Email'),
