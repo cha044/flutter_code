@@ -7,13 +7,14 @@ import '../apis_bloc/api_state_bloc.dart';
 
 class DeleteEmailView extends StatelessWidget {
   final int emailId;
+  final EmailBloc emailBloc; // Add this field
 
-  DeleteEmailView({required this.emailId});
+  DeleteEmailView(
+      {required this.emailId,
+      required this.emailBloc}); // Update the constructor
 
   @override
   Widget build(BuildContext context) {
-    final emailBloc = BlocProvider.of<EmailBloc>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Delete Email'),
