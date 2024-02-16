@@ -5,7 +5,7 @@ class EmailRepo {
   Future<List<String>> getEmail() async {
     try {
       final response = await http.get(Uri.parse(
-          "https://emergingideas.ae/test_apis/read.php?email=?"));
+          "https://emergingideas.ae/test_apis/read.php?email=?mickeydamuller@gmail.com"));
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
